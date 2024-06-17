@@ -9,11 +9,14 @@ updates:
       - "/initial/reading"
       - "/complete/bookstore"
       - "/complete/reading"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-patch"]
     schedule:
       interval: daily
     target-branch: "main"
     groups:
-      guide-dependencies:
+      guide-dependencies-maven:
         patterns:
           - "*"
     
@@ -24,9 +27,16 @@ updates:
       - "/initial/reading"
       - "/complete/bookstore"
       - "/complete/reading"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-patch"]
     schedule:
       interval: daily
     target-branch: "main"
+    groups:
+      guide-dependencies-gradle:
+        patterns:
+          - "*"
   
 
 # Scan the initial folder and try to find bookstore and reading
