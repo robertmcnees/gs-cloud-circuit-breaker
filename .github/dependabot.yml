@@ -4,13 +4,26 @@ updates:
 # Scan everything
 
   - package-ecosystem: maven
-    directory: "/"
+    directories:
+      - "/initial/bookstore"
+      - "/initial/reading"
+      - "/complete/bookstore"
+      - "/complete/reading"
     schedule:
       interval: daily
     target-branch: "main"
+    groups:
+      guide-dependencies:
+        patterns:
+          - "*"
+    
 
   - package-ecosystem: gradle
-    directory: "/"
+    directories:
+      - "/initial/bookstore"
+      - "/initial/reading"
+      - "/complete/bookstore"
+      - "/complete/reading"
     schedule:
       interval: daily
     target-branch: "main"
